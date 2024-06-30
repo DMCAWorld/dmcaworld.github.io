@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Mods</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .game {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 200px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .game:hover {
+            transform: scale(1.05);
+        }
+        .game img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+        .game h2 {
+            margin: 10px 0 0;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Game Mods</h1>
+    <div class="container">
+        <div class="game" onclick="window.location.href='smash_bros.html'">
+            <img src="https://via.placeholder.com/150" alt="Super Smash Bros">
+            <h2>Super Smash Bros. Ultimate</h2>
+        </div>
+    </div>
+</body>
+</html>
