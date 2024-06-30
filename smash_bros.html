@@ -11,40 +11,51 @@
             margin: 0;
             padding: 20px;
         }
-        .game {
+        .mod-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .mod {
             background-color: #fff;
             padding: 20px;
-            margin-bottom: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
         }
-        .game h2 {
-            margin-top: 0;
+        .mod img {
+            max-width: 100%;
+            border-radius: 8px;
+            aspect-ratio: 16 / 9;
         }
-        .mod-list {
-            list-style-type: none;
-            padding: 0;
+        .mod h3 {
+            margin-top: 10px;
+            font-size: 18px;
         }
-        .mod-list li {
-            margin: 10px 0;
-        }
-        .mod-list a {
+        .mod a {
             text-decoration: none;
             color: #007BFF;
         }
-        .mod-list a:hover {
+        .mod a:hover {
             text-decoration: underline;
         }
     </style>
 </head>
 <body>
     <h1>Super Smash Bros. Ultimate Mods</h1>
-    <div class="game">
-        <h2>Mods</h2>
-        <ul class="mod-list">
-            <li><a href="https://web.archive.org/web/20230204200141if_/https://gamebanana.com/mods/174098" target="_blank">Mario 64 Mario</a></li>
-            <li><a href="https://web.archive.org/web/20240103234431if_/https://gamebanana.com/mods/486246" target="_blank">Minish Cap Toon Link</a></li>
-        </ul>
+    <div class="mod-container">
+        <div class="mod">
+            <a href="https://web.archive.org/web/20230204200141if_/https://gamebanana.com/mods/174098" target="_blank">
+                <img src="https://web.archive.org/web/20230204200144/https://images.gamebanana.com/img/ss/mods/530-90_60fecdcdd9f07.jpg" alt="Mario 64 Mario">
+                <h3>Mario 64 Mario</h3>
+            </a>
+        </div>
+        <div class="mod">
+            <a href="https://web.archive.org/web/20240103234431if_/https://gamebanana.com/mods/486246" target="_blank">
+                <img src="https://web.archive.org/web/20240630171407if_/https://i.ibb.co/djSyhTS/image-2024-06-30-171530204.png" alt="Minish Cap Toon Link">
+                <h3>Minish Cap Toon Link</h3>
+            </a>
+        </div>
     </div>
 </body>
 </html>
