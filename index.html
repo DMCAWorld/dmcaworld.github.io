@@ -3,69 +3,161 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DMCA World: Archiving Beloved Mods and Fan-Games</title>
+    <title>DMCA World: Archiving Beloved Mods</title>
     <style>
+        :root {
+            --bg-color: #121212;
+            --card-bg: #1e1e1e;
+            --text-main: #e0e0e0;
+            --text-muted: #a0a0a0;
+            --accent: #e60012; /* Nintendo Red */
+            --accent-hover: #ff1a2d;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
             margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
             padding: 20px;
         }
-        .header {
+
+        /* Header Styles */
+        header {
             text-align: center;
+            padding: 60px 20px;
+            border-bottom: 1px solid #333;
             margin-bottom: 40px;
         }
-        .header h1 {
+
+        header h1 {
             margin: 0;
+            font-size: 3rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
-        .header p {
-            font-size: 18px;
-            color: #555;
+
+        header p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 20px auto 0;
         }
-        .container {
+
+        /* Grid System */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        /* Card Styles */
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            text-decoration: none;
+            color: inherit;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
+            flex-direction: column;
+            border: 1px solid #333;
         }
-        .game {
-            background-color: #fff;
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(230, 0, 18, 0.15); /* Red glow */
+            border-color: var(--accent);
+        }
+
+        .card-image-wrapper {
+            width: 100%;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            position: relative;
+            background-color: #000;
+        }
+
+        .card img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-content {
             padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            width: 200px;
-            cursor: pointer;
-            transition: transform 0.2s;
         }
-        .game:hover {
-            transform: scale(1.05);
+
+        .card h2 {
+            margin: 0;
+            font-size: 1.25rem;
+            font-weight: 600;
         }
-        .game img {
-            max-width: 100%;
-            border-radius: 8px;
-        }
-        .game h2 {
+
+        .card p.subtext {
             margin: 10px 0 0;
-            font-size: 18px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: #555;
+            font-size: 0.9rem;
+            margin-top: 50px;
+            border-top: 1px solid #333;
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>DMCA World</h1>
-        <p>Nintendo often takes down beloved mods and fan-games. This website serves to keep some of these cherished DMCA'd mods and fan-games and those that may be taken down in the future, hosted on archive.org. Explore and enjoy!</p>
-    </div>
-    <div class="container">
-        <div class="game" onclick="window.location.href='smash_bros.html'">
-            <img src="https://web.archive.org/web/20240322065151if_/https://img-eshop.cdn.nintendo.net/i/08af58551a19df2a73ccb36f720388434a1965776b34675c6f69af3f93280330.jpg" alt="Super Smash Bros">
-            <h2>Super Smash Bros. Ultimate Mods</h2>
+
+    <header>
+        <div class="container">
+            <h1>DMCA World</h1>
+            <p>Exploring the history of beloved mods and fan-games lost to legal takedowns. Archived for preservation and educational purposes.</p>
         </div>
-        <!-- Add more games here -->
-        <div class="game" onclick="window.location.href='https://web.archive.org/web/20200909081035if_/https://tml.z64.me/'">
-            <img src="https://web.archive.org/web/20240630174136if_/https://i.ibb.co/s6S8GdW/Untitled-design-19.png" alt="The Legend Of Zelda: The Missing Link">
-            <h2>The Legend Of Zelda: The Missing Link</h2>
+    </header>
+
+    <main class="container">
+        <div class="grid">
+            <a href="smash_bros.html" class="card">
+                <div class="card-image-wrapper">
+                    <img src="https://web.archive.org/web/20240322065151if_/https://img-eshop.cdn.nintendo.net/i/08af58551a19df2a73ccb36f720388434a1965776b34675c6f69af3f93280330.jpg" alt="Super Smash Bros Ultimate">
+                </div>
+                <div class="card-content">
+                    <h2>Super Smash Bros. Ultimate</h2>
+                    <p class="subtext">Collection of Mods & Skins</p>
+                </div>
+            </a>
+
+            <a href="https://web.archive.org/web/20200909081035if_/https://tml.z64.me/" target="_blank" class="card">
+                <div class="card-image-wrapper">
+                    <img src="https://web.archive.org/web/20240630174136if_/https://i.ibb.co/s6S8GdW/Untitled-design-19.png" alt="The Legend Of Zelda: The Missing Link">
+                </div>
+                <div class="card-content">
+                    <h2>Zelda: The Missing Link</h2>
+                    <p class="subtext">Full Fan-Game Archive</p>
+                </div>
+            </a>
         </div>
-    </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 DMCA World. This site is for archival purposes only.</p>
+    </footer>
+
 </body>
 </html>
