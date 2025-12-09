@@ -5,57 +5,119 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Super Smash Bros. Ultimate Mods</title>
     <style>
+        /* Reuse the same CSS variables and base styles for consistency */
+        :root {
+            --bg-color: #121212;
+            --card-bg: #1e1e1e;
+            --text-main: #e0e0e0;
+            --text-muted: #a0a0a0;
+            --accent: #e60012;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+            font-family: system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
             margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
             padding: 20px;
         }
-        .mod-container {
+
+        .nav-bar {
+            padding: 20px 0;
             display: flex;
-            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .back-btn {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            transition: color 0.2s;
+        }
+
+        .back-btn:hover {
+            color: var(--accent);
+        }
+
+        .back-btn::before {
+            content: "←";
+            margin-right: 8px;
+            font-size: 1.2rem;
+        }
+
+        h1 {
+            color: var(--accent);
+            margin-bottom: 30px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 20px;
         }
-        .mod {
-            background-color: #fff;
-            padding: 20px;
+
+        .card {
+            background-color: var(--card-bg);
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 300px;
-        }
-        .mod img {
-            max-width: 100%;
-            border-radius: 8px;
-            aspect-ratio: 16 / 9;
-        }
-        .mod h3 {
-            margin-top: 10px;
-            font-size: 18px;
-        }
-        .mod a {
+            overflow: hidden;
             text-decoration: none;
-            color: #007BFF;
+            color: inherit;
+            display: block;
+            border: 1px solid #333;
+            transition: transform 0.2s, border-color 0.2s;
         }
-        .mod a:hover {
-            text-decoration: underline;
+
+        .card:hover {
+            transform: translateY(-3px);
+            border-color: var(--accent);
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            display: block;
+        }
+
+        .card h3 {
+            padding: 15px;
+            margin: 0;
+            font-size: 1.1rem;
         }
     </style>
 </head>
 <body>
-    <h1>Super Smash Bros. Ultimate Mods</h1>
-    <div class="mod-container">
-        <div class="mod">
-            <a href="https://web.archive.org/web/20230204200141if_/https://gamebanana.com/mods/174098" target="_blank">
-                <img src="https://web.archive.org/web/20230204200144/https://images.gamebanana.com/img/ss/mods/530-90_60fecdcdd9f07.jpg" alt="Mario 64 Mario">
+
+    <div class="container">
+        <nav class="nav-bar">
+            <a href="index.html" class="back-btn">Back to Home</a>
+        </nav>
+
+        <h1>Super Smash Bros. Ultimate Mods</h1>
+
+        <div class="grid">
+            <a href="https://web.archive.org/web/20230204200141if_/https://gamebanana.com/mods/174098" target="_blank" class="card">
+                <img src="https://web.archive.org/web/20230204200144/https://images.gamebanana.com/img/ss/mods/530-90_60fecdcdd9f07.jpg" alt="Mario 64 Mario Mod">
                 <h3>Mario 64 Mario</h3>
             </a>
-        </div>
-        <div class="mod">
-            <a href="https://web.archive.org/web/20240103234431if_/https://gamebanana.com/mods/486246" target="_blank">
-                <img src="https://web.archive.org/web/20240630171407if_/https://i.ibb.co/djSyhTS/image-2024-06-30-171530204.png" alt="Minish Cap Toon Link">
+
+            <a href="https://web.archive.org/web/20240103234431if_/https://gamebanana.com/mods/486246" target="_blank" class="card">
+                <img src="https://web.archive.org/web/20240630171407if_/https://i.ibb.co/djSyhTS/image-2024-06-30-171530204.png" alt="Minish Cap Toon Link Mod">
                 <h3>Minish Cap Toon Link</h3>
             </a>
         </div>
     </div>
+
 </body>
 </html>
